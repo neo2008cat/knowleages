@@ -11,6 +11,7 @@
 * [技术心得](technical_mind/introduce.md)
     * [JAVA8新特性](technical_mind/java8.md)
     * [G1收集器](technical_mind/g1_collector.md)
+    * [TCP/IP协议详解](technical_mind/tcp_ip.md)
 * [行业技术](new_tech/introduce.md)
     * [Docker](new_tech/docker.md)
     * [DevOps](new_tech/devops.md)
