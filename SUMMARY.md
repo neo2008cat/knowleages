@@ -12,6 +12,7 @@
     * [Java8新特性](technical_mind/java8.md)
     * [G1收集器](technical_mind/g1_collector.md)
     * [Tcp/Ip协议详解](technical_mind/tcp_ip.md)
+    * [Https协议详解](technical_mind/https.md)
     * [WebSocket协议详解](technical_mind/websocket.md)
 * [行业技术](new_tech/introduce.md)
     * [Docker](new_tech/docker.md)
@@ -22,6 +23,9 @@
     * [ElasticSearch](new_tech/elasticsearch.md)
     * [Spark](new_tech/spark.md)
     * [Storm](new_tech/storm.md)
+
+* [技术文章](tech_article/introdcue.md)
+    * [基于DevOps、微服务以及k8s的高可用架构探索与实现](tech_article/devops_k8s_docker.md)
 * [面试相关](interview/introduce.md)
     * [Java基础](interview/java.md)
     * [项目经验](interview/project.md)
