@@ -36,7 +36,61 @@
     LAST-ACK： 等待原来的发向远程TCP的连接中断请求的确认
     TIME-WAIT： 等待足够的时间以确保远程TCP接收到连接中断请求的确认
     CLOSED： 没有任何连接状态
+
+    man netstat 的文档说明
+    CLOSED:  The socket is not in use.
+    LISTEN:  The socket is listening for incoming connections.  Unconnected
+         listening sockets like these are only displayed when using the -a option.
+    SYN_SENT:  The socket is actively trying to establish a connection to a
+         remote peer.
+    SYN_RCVD:  The socket has passively received a connection request from a
+         remote peer.
+    ESTABLISHED:  The socket has an established connection between a local
+         application and a remote peer.
+    CLOSE_WAIT:  The socket connection has been closed by the remote peer,
+         and the system is waiting for the local application to close its half of
+         the connection.
+    LAST_ACK:  The socket connection has been closed by the remote peer, the
+         local application has closed its half of the connection, and the system
+         is waiting for the remote peer to acknowledge the close.
+    FIN_WAIT_1:  The socket connection has been closed by the local
+         application, the remote peer has not yet acknowledged the close, and the
+         system is waiting for it to close its half of the connection.
+    FIN_WAIT_2:  The socket connection has been closed by the local
+         application, the remote peer has acknowledged the close, and the system
+         is waiting for it to close its half of the connection.
+    CLOSING:  The socket connection has been closed by the local application
+         and the remote peer simultaneously, and the remote peer has not yet
+         acknowledged the close attempt of the local application.
+    TIME_WAIT:  The socket connection has been closed by the local
+         application, the remote peer has closed its half of the connection, and
+         the system is waiting to be sure that the remote peer received the last
+         acknowledgement.
+
     
-##命令查看tcp连接
+##常用网络命令
+* netstat
+* lsof
+* tcpdump
+* wireshark 工具
+* ifconfig
+* nslookup
+* ping
+* telnet
+* traceroute
+* wget
+* curl
+* scp
+* mtr
+* host
+* whois
+* ifdown & ifup
+* dhclient
+* nc
+* ss
+* ethereal
 
+##有关最大tcp连接数
+[单机最大tcp连接数](http://blog.csdn.net/huangjin0507/article/details/52399957)
 
+[time_wait状态产生的原因，危害，如何避免](http://blog.csdn.net/u013616945/article/details/77510925)
