@@ -72,6 +72,33 @@
 * netstat
 * lsof
 * tcpdump
+    >使用tcpdump工具，查看tcp连接过程
+    www.baidu.com 域名解析出 220.181.111.188
+    使用wget http://220.181.111.188 下载百度首页html
+    >tcpdump | grep '220.181.111.188' 日志如下
+
+        1.22:56:55.806247 IP neo2008cat.43906 > 220.181.111.188.http: Flags [S], seq 460242205, win 29200, options [mss 1460,sackOK,TS val 4294936264 ecr 0,nop,wscale 7], length 0
+        2.22:56:55.830717 IP 220.181.111.188.http > neo2008cat.43906: Flags [S.], seq 1048351813, ack 460242206, win 8192, options [mss 1452,sackOK,nop,nop,nop,nop,nop,nop,nop,nop,nop,nop,nop,wscale 5], length 0
+        3.22:56:55.830732 IP neo2008cat.43906 > 220.181.111.188.http: Flags [.], ack 1, win 229, length 0
+        4.22:56:55.830802 IP neo2008cat.43906 > 220.181.111.188.http: Flags [P.], seq 1:143, ack 1, win 229, length 142: HTTP: GET / HTTP/1.1
+        5.22:56:55.855555 IP 220.181.111.188.http > neo2008cat.43906: Flags [.], ack 143, win 808, length 0
+        6.22:56:55.857868 IP 220.181.111.188.http > neo2008cat.43906: Flags [P.], seq 1:401, ack 143, win 808, length 400: HTTP: HTTP/1.1 200 OK
+        7.22:56:55.857875 IP neo2008cat.43906 > 220.181.111.188.http: Flags [.], ack 401, win 237, length 0
+        8.22:56:55.857870 IP 220.181.111.188.http > neo2008cat.43906: Flags [P.], seq 401:1441, ack 143, win 808, length 1040: HTTP
+        9.22:56:55.857882 IP neo2008cat.43906 > 220.181.111.188.http: Flags [.], ack 1441, win 253, length 0
+        10.22:56:55.857977 IP 220.181.111.188.http > neo2008cat.43906: Flags [P.], seq 1441:2782, ack 143, win 808, length 1341: HTTP
+        11.22:56:55.857980 IP neo2008cat.43906 > 220.181.111.188.http: Flags [.], ack 2782, win 276, length 0
+        12.22:56:55.858047 IP 220.181.111.188.http > neo2008cat.43906: Flags [F.], seq 2782, ack 143, win 808, length 0
+        13.22:56:55.858556 IP neo2008cat.43906 > 220.181.111.188.http: Flags [F.], seq 143, ack 2783, win 276, length 0
+        14.22:56:55.883276 IP 220.181.111.188.http > neo2008cat.43906: Flags [.], ack 144, win 808, length 0
+
+        1~3行:客户端建立连接的过程,客户端发送syn,服务器发送syn+ack,客户端发送ack 连接建立
+        4~11行:客户端和服务器端数据传输的过程
+        12～14行:服务端与客户端连接断开的过程，服务器端发送fin包(此时服务器连接状态为FIN-WAIT-1),客户端发送fin+ack包,服务发送ack包(此时服务器连接状态为TIME-WAIT,同时收到fin+ack包,所以没有FIN-WAIT-2状态),等待两个2msl后,服务器连接CLOSED
+
+    tcpdump -w tcpdump.cap保存tcpdump的结果,导入到wireshark中,以下是wireshark的截图:
+    ![tcp-wireshark](../images/wireshark_tcp.png)
+
 * wireshark 工具
 * ifconfig
 * nslookup
