@@ -1,0 +1,704 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Https协议详解 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="websocket.html" />
+    
+    
+    <link rel="prev" href="tcp_ip.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    笔记本简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../code_read/introduce.html">
+            
+                <a href="../code_read/introduce.html">
+            
+                    
+                    源码阅读
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../code_read/architecture.html">
+            
+                <a href="../code_read/architecture.html">
+            
+                    
+                    JDK源码
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" >
+            
+                <span>
+            
+                    
+                    java.util
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" data-path="../code_read/javautil/HashMap.html">
+            
+                <a href="../code_read/javautil/HashMap.html">
+            
+                    
+                    HashMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" >
+            
+                <span>
+            
+                    
+                    java.util.concurrent
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.2.1" data-path="../code_read/javautilconcurrent/CountDownLatch.html">
+            
+                <a href="../code_read/javautilconcurrent/CountDownLatch.html">
+            
+                    
+                    CountDownLatch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.2" data-path="../code_read/javautilconcurrent/CyclicBarrier.html">
+            
+                <a href="../code_read/javautilconcurrent/CyclicBarrier.html">
+            
+                    
+                    CyclicBarrier
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="introduce.html">
+            
+                <a href="introduce.html">
+            
+                    
+                    技术心得
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="java8.html">
+            
+                <a href="java8.html">
+            
+                    
+                    Java8新特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="g1_collector.html">
+            
+                <a href="g1_collector.html">
+            
+                    
+                    G1收集器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="tcp_ip.html">
+            
+                <a href="tcp_ip.html">
+            
+                    
+                    Tcp/Ip协议详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.4" data-path="https.html">
+            
+                <a href="https.html">
+            
+                    
+                    Https协议详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="websocket.html">
+            
+                <a href="websocket.html">
+            
+                    
+                    WebSocket协议详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../new_tech/introduce.html">
+            
+                <a href="../new_tech/introduce.html">
+            
+                    
+                    行业技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../new_tech/docker.html">
+            
+                <a href="../new_tech/docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../new_tech/devops.html">
+            
+                <a href="../new_tech/devops.html">
+            
+                    
+                    DevOps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../new_tech/kafka.html">
+            
+                <a href="../new_tech/kafka.html">
+            
+                    
+                    Kafka
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../new_tech/redis.html">
+            
+                <a href="../new_tech/redis.html">
+            
+                    
+                    Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../new_tech/zookeeper.html">
+            
+                <a href="../new_tech/zookeeper.html">
+            
+                    
+                    Zookeeper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../new_tech/elasticsearch.html">
+            
+                <a href="../new_tech/elasticsearch.html">
+            
+                    
+                    ElasticSearch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../new_tech/spark.html">
+            
+                <a href="../new_tech/spark.html">
+            
+                    
+                    Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../new_tech/storm.html">
+            
+                <a href="../new_tech/storm.html">
+            
+                    
+                    Storm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../tech_article/introdcue.html">
+            
+                <a href="../tech_article/introdcue.html">
+            
+                    
+                    技术文章
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../tech_article/devops_k8s_docker.html">
+            
+                <a href="../tech_article/devops_k8s_docker.html">
+            
+                    
+                    基于DevOps、微服务以及k8s的高可用架构探索与实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../interview/introduce.html">
+            
+                <a href="../interview/introduce.html">
+            
+                    
+                    面试相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../interview/java.html">
+            
+                <a href="../interview/java.html">
+            
+                    
+                    Java基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../interview/project.html">
+            
+                <a href="../interview/project.html">
+            
+                    
+                    项目经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../interview/architecture.html">
+            
+                <a href="../interview/architecture.html">
+            
+                    
+                    系统架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../interview/optimize.html">
+            
+                <a href="../interview/optimize.html">
+            
+                    
+                    系统调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Https协议详解</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="https&#x534F;&#x8BAE;&#x8BE6;&#x89E3;">Https&#x534F;&#x8BAE;&#x8BE6;&#x89E3;</h1>
+<h2 id="https&#x534F;&#x8BAE;&#x63E1;&#x624B;&#x8FC7;&#x7A0B;">Https&#x534F;&#x8BAE;&#x63E1;&#x624B;&#x8FC7;&#x7A0B;</h2>
+<blockquote>
+<p>&#x4F7F;&#x7528;baidu&#x9996;&#x9875;&#x4F5C;&#x4E3A;&#x4F8B;&#x5B50;&#xFF0C;&#x6839;&#x636E;tcpdump&#x6293;&#x5305;&#x67E5;&#x770B;https&#x63E1;&#x624B;&#x5B9E;&#x73B0;&#x52A0;&#x5BC6;&#x4F20;&#x8F93;&#x7684;&#x8FC7;&#x7A0B;</p>
+<ol>
+<li>tcpdump -w tcpdump.cap</li>
+<li>wget <a href="https://www.baidu.com/" target="_blank">https://www.baidu.com/</a></li>
+<li>&#x4E0B;&#x8F7D;tcpdump.cap &#x5BFC;&#x5165;wireshark&#x4E2D;&#x67E5;&#x770B;</li>
+</ol>
+<p>&#x4EE5;&#x4E0B;&#x662F;tcpdump&#x7684;&#x8BB0;&#x5F55;:</p>
+</blockquote>
+<pre><code>    1. 00:17:14.907052 IP neo2008cat.50116 &gt; 220.181.112.244.https: Flags [S], seq 4229799700, win 29200, options [mss 1460,sackOK,TS val 1173743 ecr 0,nop,wscale 7], length 0
+    2. 00:17:14.941560 IP 220.181.112.244.https &gt; neo2008cat.50116: Flags [S.], seq 1036237580, ack 4229799701, win 8192, options [mss 1452,sackOK,nop,nop,nop,nop,nop,nop,nop,nop,nop,nop,nop,wscale 5], length 0
+    3. 00:17:14.941572 IP neo2008cat.50116 &gt; 220.181.112.244.https: Flags [.], ack 1, win 229, length 0
+    4. 00:17:14.941693 IP neo2008cat.50116 &gt; 220.181.112.244.https: Flags [P.], seq 1:328, ack 1, win 229, length 327
+    5. 00:17:14.976487 IP 220.181.112.244.https &gt; neo2008cat.50116: Flags [.], ack 328, win 812, length 0
+    6. 00:17:14.976567 IP 220.181.112.244.https &gt; neo2008cat.50116: Flags [P.], seq 1:59, ack 328, win 812, length 58
+    7. 00:17:14.976577 IP neo2008cat.50116 &gt; 220.181.112.244.https: Flags [.], ack 59, win 229, length 0
+    8. 00:17:14.976794 IP 220.181.112.244.https &gt; neo2008cat.50116: Flags [P.], seq 59:4824, ack 328, win 812, length 4765
+    9. 00:17:14.976805 IP neo2008cat.50116 &gt; 220.181.112.244.https: Flags [.], ack 4824, win 303, length 0
+    10. 00:17:14.979165 IP 220.181.112.244.https &gt; neo2008cat.50116: Flags [P.], seq 4824:5162, ack 328, win 812, length 338
+    11. 00:17:14.979166 IP 220.181.112.244.https &gt; neo2008cat.50116: Flags [P.], seq 5162:5171, ack 328, win 812, length 9
+    12. 00:17:14.979176 IP neo2008cat.50116 &gt; 220.181.112.244.https: Flags [.], ack 5162, win 326, length 0
+    13. 00:17:14.979180 IP neo2008cat.50116 &gt; 220.181.112.244.https: Flags [.], ack 5171, win 326, length 0
+    14. 00:17:14.979516 IP neo2008cat.50116 &gt; 220.181.112.244.https: Flags [P.], seq 328:454, ack 5171, win 326, length 126
+    15. 00:17:15.014252 IP 220.181.112.244.https &gt; neo2008cat.50116: Flags [.], ack 454, win 812, length 0
+    16. 00:17:15.014564 IP 220.181.112.244.https &gt; neo2008cat.50116: Flags [P.], seq 5171:5346, ack 454, win 812, length 175
+    17. 00:17:15.014564 IP 220.181.112.244.https &gt; neo2008cat.50116: Flags [P.], seq 5346:5352, ack 454, win 812, length 6
+    18. 00:17:15.014565 IP 220.181.112.244.https &gt; neo2008cat.50116: Flags [P.], seq 5352:5397, ack 454, win 812, length 45
+    19. 00:17:15.014609 IP neo2008cat.50116 &gt; 220.181.112.244.https: Flags [.], ack 5397, win 349, length 0
+    20. 00:17:15.014679 IP neo2008cat.50116 &gt; 220.181.112.244.https: Flags [P.], seq 454:623, ack 5397, win 349, length 169
+    21. 00:17:15.049362 IP 220.181.112.244.https &gt; neo2008cat.50116: Flags [.], ack 623, win 844, length 0
+    22. 00:17:15.051346 IP 220.181.112.244.https &gt; neo2008cat.50116: Flags [P.], seq 5397:8269, ack 623, win 844, length 2872
+    23. 00:17:15.051350 IP neo2008cat.50116 &gt; 220.181.112.244.https: Flags [.], ack 8269, win 394, length 0
+    24. 00:17:15.052018 IP neo2008cat.50116 &gt; 220.181.112.244.https: Flags [F.], seq 623, ack 8269, win 394, length 0
+    25. 00:17:15.086641 IP 220.181.112.244.https &gt; neo2008cat.50116: Flags [.], ack 624, win 844, length 0
+    26. 00:17:15.086754 IP 220.181.112.244.https &gt; neo2008cat.50116: Flags [P.], seq 8269:8300, ack 624, win 844, length 31
+    27. 00:17:15.086763 IP neo2008cat.50116 &gt; 220.181.112.244.https: Flags [R], seq 4229800324, win 0, length 0
+    28. 00:17:15.086755 IP 220.181.112.244.https &gt; neo2008cat.50116: Flags [F.], seq 8300, ack 624, win 844, length 0
+    29. 00:17:15.086768 IP neo2008cat.50116 &gt; 220.181.112.244.https: Flags [R], seq 4229800324, win 0, length 0
+</code></pre><blockquote>
+<p>&#x4EE5;&#x4E0B;&#x662F;wireshark&#x7684;&#x622A;&#x56FE;&#x4FE1;&#x606F;:
+<img src="../images/wireshark_https.png" alt="wireshark_https.png"></p>
+<p>&#x6BD4;&#x8F83;&#x7ECF;&#x5178;&#x6709;&#x8DA3;&#x7684;&#x89E3;&#x91CA;http&#x63E1;&#x624B;&#x8FC7;&#x7A0B;:
+<a href="http://mp.weixin.qq.com/s/StqqafHePlBkWAPQZg3NrA" target="_blank">&#x4E00;&#x4E2A;&#x6545;&#x4E8B;&#x8BB2;&#x5B8C;https</a></p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="tcp_ip.html" class="navigation navigation-prev " aria-label="Previous page: Tcp/Ip协议详解">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="websocket.html" class="navigation navigation-next " aria-label="Next page: WebSocket协议详解">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Https协议详解","level":"1.3.4","depth":2,"next":{"title":"WebSocket协议详解","level":"1.3.5","depth":2,"path":"technical_mind/websocket.md","ref":"technical_mind/websocket.md","articles":[]},"previous":{"title":"Tcp/Ip协议详解","level":"1.3.3","depth":2,"path":"technical_mind/tcp_ip.md","ref":"technical_mind/tcp_ip.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"technical_mind/https.md","mtime":"2018-03-15T12:13:47.411Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-15T12:15:54.190Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
